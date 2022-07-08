@@ -7,6 +7,10 @@ const port = process.env.PORT
 const app = express()
 app.use(express.json())
 
+app.get('/',(req,res)=>{
+  res.json({'st':'up'})
+})
+
 app.post('/login',async(req,res)=>{
   const token = await database.getUserToken(req.body.email,req.body.password)
   console.log(token)
