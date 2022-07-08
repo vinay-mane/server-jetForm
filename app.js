@@ -2,9 +2,11 @@ const mongoose = require('mongoose')
 const express = require('express')
 require('dotenv').config()
 const database = require('./logic/Database')
+const cors = require('cors')
 
 const port = process.env.PORT
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 app.get('/',(req,res)=>{
